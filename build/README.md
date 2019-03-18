@@ -47,6 +47,17 @@ shasum -a 256 opnsense.iso
 packer build -var 'iso_sha256_checksum=63c80d66c4de4eaf7c4d98976855112ad097f63dac06ba59a55fa40496de384a' opnsense.json 
 ```
 
+### 19.1
+
+```
+cd build
+wget https://opnsense.c0urier.net/releases/19.1/OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-19.1-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=58bf2f0ae7948791589cd11727a5daa270bf00f655d8defe0a43140d920e8065' opnsense.json 
+```
+
 ## Accessing 
 
 1. Import the OVF from output/virtualbox-iso/opnsense.ovf into your VirtualBox by double-clicking it
