@@ -314,6 +314,7 @@
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
       <descr>Allow SSH access</descr>
+      <log>1</log>
       <protocol>tcp</protocol>
       <source>
         <any/>
@@ -329,6 +330,7 @@
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
       <descr>Allow incoming WebGUI access</descr>
+      <log>1</log>
       <protocol>tcp</protocol>
       <source>
         <any/>
@@ -342,6 +344,7 @@
       <type>pass</type>
       <ipprotocol>inet</ipprotocol>
       <descr>Default allow LAN to any rule</descr>
+      <log>1</log>
       <interface>lan</interface>
       <source>
         <network>lan</network>
