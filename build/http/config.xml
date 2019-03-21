@@ -755,7 +755,17 @@
     </Netflow>
   </OPNsense>
   <gateways>
-    <gateway_item/>
+    <gateway_item>
+      <interface>wan</interface>
+      <gateway>dynamic</gateway>
+      <name>WAN_DHCP</name>
+      <weight>1</weight>
+      <ipprotocol>inet</ipprotocol>
+      <interval/>
+      <descr>Interface WAN dhcp Gateway</descr>
+      <monitor_disable>1</monitor_disable>
+      <defaultgw>1</defaultgw>
+    </gateway_item>
   </gateways>
   <ca/>
   <cert>
