@@ -59,6 +59,7 @@
         [ "modifyvm", "{{.Name}}", "--audio", "none" ],
         [ "modifyvm", "{{.Name}}", "--usb", "off" ],
         [ "modifyvm", "{{.Name}}", "--nic1", "hostonly" ],
+        [ "modifyvm", "{{.Name}}", "--hostonlyadapter1","vboxnet0" ],
         [ "modifyvm", "{{.Name}}", "--nictype1", "virtio" ],
         [ "modifyvm", "{{.Name}}", "--nicpromisc1", "allow-all" ],
         [ "modifyvm", "{{.Name}}", "--nic2", "nat" ],
