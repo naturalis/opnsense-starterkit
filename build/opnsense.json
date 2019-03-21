@@ -69,7 +69,7 @@
         [ "modifyvm", "{{.Name}}", "--natpf2", "https-wan,tcp,127.0.0.1,20443,,443" ],
         [ "modifyvm", "{{.Name}}", "--natpf2", "ssh-wan,tcp,127.0.0.1,20022,,22" ],
         [ "modifyvm", "{{.Name}}", "--nic3", "hostonly" ],
-        [ "modifyvm", "{{.Name}}", "--hostonlyadapter3", "vboxnet2" ],
+        [ "modifyvm", "{{.Name}}", "--hostonlyadapter3", "vboxnet0" ],
         [ "modifyvm", "{{.Name}}", "--nictype3", "virtio" ],
         [ "modifyvm", "{{.Name}}", "--nicpromisc3", "allow-all" ]
       ]
