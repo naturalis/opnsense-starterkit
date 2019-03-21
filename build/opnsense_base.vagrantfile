@@ -9,23 +9,22 @@ Vagrant.configure("2") do |config|
   config.vbguest.auto_update = false
   config.vm.provider :virtualbox do |vb, override|
   
-    #nic1, wan:
-    vb.customize ['modifyvm', :id, '--nic1', 'nat']
+    #nic1, oob, vagrant:
+    vb.customize ['modifyvm', :id, "--nic1", "nat"]
     vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
     vb.customize ["modifyvm", :id, "--nicpromisc1", "allow-all"]
-    vb.customize ['modifyvm', :id, '--natpf1', "https-opnsense,tcp,127.0.0.1,10443,,443"]
-    vb.customize ['modifyvm', :id, '--natpf1', "ssh-opnsense,tcp,127.0.0.1,10022,,22"]
-    
-    #nic2, lan:
-    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
+       
+    #nic2, wan:
+    vb.customize ['modifyvm', :id, "--nic2', "nat"]
     vb.customize ["modifyvm", :id, "--nictype2", "virtio"]
     vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
+    vb.customize ['modifyvm', :id, '--natpf2', "https-opnsense,tcp,127.0.0.1,10443,,443"]
+    vb.customize ['modifyvm', :id, '--natpf2', "ssh-opnsense,tcp,127.0.0.1,10022,,22"]
 
-    #nic3, oob:
+    #nic3, lan:
     vb.customize ['modifyvm', :id, '--nic3', 'intnet']
     vb.customize ["modifyvm", :id, "--nictype3", "virtio"]
     vb.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
-    vb.customize ['modifyvm', :id, "--cableconnected3", 'off']
 
   end
 end
