@@ -72,6 +72,10 @@
         [ "modifyvm", "{{.Name}}", "--intnet3", "opnsense" ],
         [ "modifyvm", "{{.Name}}", "--nictype3", "virtio" ],
         [ "modifyvm", "{{.Name}}", "--nicpromisc3", "allow-all" ]
+        [ "modifyvm", "{{.Name}}", "--nic4", "intnet" ],
+        [ "modifyvm", "{{.Name}}", "--intnet4", "sync" ],
+        [ "modifyvm", "{{.Name}}", "--nictype4", "virtio" ],
+        [ "modifyvm", "{{.Name}}", "--nicpromisc4", "allow-all" ]
       ]
     }
   ],
