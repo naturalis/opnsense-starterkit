@@ -291,7 +291,7 @@
   <interfaces>
     <wan>
       <if>vtnet1</if>
-      <descr/>
+      <descr>wan</descr>
       <enable>1</enable>
       <spoofmac/>
       <blockbogons>1</blockbogons>
@@ -347,6 +347,7 @@
     <lan>
       <enable>1</enable>
       <if>vtnet2</if>
+      <descr>lan</descr>
       <ipaddr>192.168.1.1</ipaddr>
       <subnet>24</subnet>
       <ipaddrv6>track6</ipaddrv6>
@@ -356,9 +357,9 @@
       <track6-interface>wan</track6-interface>
       <track6-prefix-id>0</track6-prefix-id>
     </lan>
-    <opt1>
+    <oob>
       <if>vtnet0</if>
-      <descr>OOB</descr>
+      <descr>oob</descr>
       <enable>1</enable>
       <spoofmac/>
       <ipaddr>dhcp</ipaddr>
@@ -380,7 +381,7 @@
       <adv_dhcp_config_advanced/>
       <adv_dhcp_config_file_override/>
       <adv_dhcp_config_file_override_path/>
-    </opt1>
+    </oob>
   </interfaces>
   <dhcpd>
     <lan>
@@ -486,10 +487,10 @@
     </rule>
     <rule>
       <type>pass</type>
-      <interface>opt1</interface>
+      <interface>oob</interface>
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
-      <descr>All ssh</descr>
+      <descr>Allow ssh</descr>
       <log>1</log>
       <protocol>tcp</protocol>
       <source>
@@ -512,10 +513,10 @@
     </rule>
     <rule>
       <type>pass</type>
-      <interface>opt1</interface>
+      <interface>oob</interface>
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
-      <descr>All webGUI</descr>
+      <descr>Allow webGUI</descr>
       <log>1</log>
       <protocol>tcp</protocol>
       <source>
