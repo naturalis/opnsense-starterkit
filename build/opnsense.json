@@ -30,7 +30,7 @@
         "root<enter><wait5>",
         "opnsense<enter><wait5>",
         "8<enter><wait5>",
-        "dhclient em0<enter><wait10>",
+        "dhclient vtnet0<enter><wait10>",
         "telnet {{ .HTTPIP }} {{ .HTTPPort }} | sed '1,/^$/d' >/conf/config.xml<wait><enter>",
         "GET /{{user `config_file`}} HTTP/1.0<enter><enter>",
         "echo 'PasswordAuthentication yes' >> /usr/local/etc/ssh/sshd_config<enter>",
@@ -57,7 +57,21 @@
         [ "modifyvm", "{{.Name}}", "--boot1", "disk" ],
         [ "modifyvm", "{{.Name}}", "--boot2", "dvd" ],
         [ "modifyvm", "{{.Name}}", "--audio", "none" ],
-        [ "modifyvm", "{{.Name}}", "--usb", "off" ]
+        [ "modifyvm", "{{.Name}}", "--usb", "off" ],
+        [ "modifyvm", "{{.Name}}", "--nic1", "nat" ],
+        [ "modifyvm", "{{.Name}}", "--nictype1", "virtio" ],
+        [ "modifyvm", "{{.Name}}", "--nicpromisc1", "allow-all" ],
+        [ "modifyvm", "{{.Name}}", "--natpf1", "https-oob,tcp,127.0.0.1,10443,,443" ],
+        [ "modifyvm", "{{.Name}}", "--natpf1", "ssh-oob,tcp,127.0.0.1,10022,,22" ],
+        [ "modifyvm", "{{.Name}}", "--nic2", "nat" ],
+        [ "modifyvm", "{{.Name}}", "--nictype2", "virtio" ],
+        [ "modifyvm", "{{.Name}}", "--nicpromisc2", "allow-all" ],
+        [ "modifyvm", "{{.Name}}", "--natpf2", "https-wan,tcp,127.0.0.1,20443,,443" ],
+        [ "modifyvm", "{{.Name}}", "--natpf2", "ssh-wan,tcp,127.0.0.1,20022,,22" ],
+        [ "modifyvm", "{{.Name}}", "--nic3", "intnet" ],
+        [ "modifyvm", "{{.Name}}", "--intnet3", "opnsense" ],
+        [ "modifyvm", "{{.Name}}", "--nictype3", "virtio" ],
+        [ "modifyvm", "{{.Name}}", "--nicpromisc3", "allow-all" ]
       ]
     }
   ],
