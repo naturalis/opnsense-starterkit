@@ -290,7 +290,7 @@
   </system>
   <interfaces>
     <wan>
-      <if>vtnet1</if>
+      <if>vtnet2</if>
       <descr>wan</descr>
       <enable>1</enable>
       <spoofmac/>
@@ -317,7 +317,7 @@
     </wan>
     <lan>
       <enable>1</enable>
-      <if>vtnet2</if>
+      <if>vtnet3</if>
       <descr>lan</descr>
       <ipaddr>192.168.1.1</ipaddr>
       <subnet>24</subnet>
@@ -329,7 +329,7 @@
       <track6-prefix-id>0</track6-prefix-id>
     </lan>
     <oob>
-      <if>vtnet0</if>
+      <if>vtnet1</if>
       <descr>oob</descr>
       <enable>1</enable>
       <spoofmac/>
@@ -353,6 +353,31 @@
       <adv_dhcp_config_file_override/>
       <adv_dhcp_config_file_override_path/>
     </oob>
+    <vagrant>
+      <if>vtnet0</if>
+      <descr>vagrant</descr>
+      <enable>1</enable>
+      <spoofmac/>
+      <ipaddr>dhcp</ipaddr>
+      <dhcphostname/>
+      <alias-address/>
+      <alias-subnet>32</alias-subnet>
+      <dhcprejectfrom/>
+      <adv_dhcp_pt_timeout/>
+      <adv_dhcp_pt_retry/>
+      <adv_dhcp_pt_select_timeout/>
+      <adv_dhcp_pt_reboot/>
+      <adv_dhcp_pt_backoff_cutoff/>
+      <adv_dhcp_pt_initial_interval/>
+      <adv_dhcp_pt_values>SavedCfg</adv_dhcp_pt_values>
+      <adv_dhcp_send_options/>
+      <adv_dhcp_request_options/>
+      <adv_dhcp_required_options/>
+      <adv_dhcp_option_modifiers/>
+      <adv_dhcp_config_advanced/>
+      <adv_dhcp_config_file_override/>
+      <adv_dhcp_config_file_override_path/>
+    </vagrant>
   </interfaces>
   <dhcpd>
     <lan>
@@ -395,16 +420,6 @@
         <any>1</any>
         <port>22</port>
       </destination>
-      <updated>
-        <username>root@192.168.56.103</username>
-        <time>1553176498.8107</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@192.168.56.103</username>
-        <time>1553176498.8107</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
     </rule>
     <rule>
       <type>pass</type>
@@ -421,16 +436,6 @@
         <any>1</any>
         <port>443</port>
       </destination>
-      <updated>
-        <username>root@192.168.56.103</username>
-        <time>1553176530.5337</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@192.168.56.103</username>
-        <time>1553176530.5337</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
     </rule>
     <rule>
       <type>pass</type>
@@ -471,16 +476,6 @@
         <any>1</any>
         <port>22</port>
       </destination>
-      <updated>
-        <username>root@192.168.1.100</username>
-        <time>1553161368.1616</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@192.168.1.100</username>
-        <time>1553161368.1618</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
     </rule>
     <rule>
       <type>pass</type>
@@ -497,16 +492,22 @@
         <any>1</any>
         <port>443</port>
       </destination>
-      <updated>
-        <username>root@192.168.1.100</username>
-        <time>1553161393.6003</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </updated>
-      <created>
-        <username>root@192.168.1.100</username>
-        <time>1553161393.6003</time>
-        <description>/firewall_rules_edit.php made changes</description>
-      </created>
+    </rule>
+    <rule>
+      <type>pass</type>
+      <interface>vagrant</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow ssh</descr>
+      <log>1</log>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+        <port>22</port>
+      </destination>
     </rule>
   </filter>
   <rrd>
