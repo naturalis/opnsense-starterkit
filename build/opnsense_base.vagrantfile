@@ -32,13 +32,13 @@ Vagrant.configure("2") do |config|
 
     #nic4, lan:
     vb.customize ["modifyvm", :id, "--nic4", "intnet"]
-    vb.customize ["modifyvm", :id, "--intnet4", "opnsense"]
+    vb.customize ["modifyvm", :id, "--intnet4", "opnsense-lan"]
     vb.customize ["modifyvm", :id, "--nictype4", "virtio"]
     vb.customize ["modifyvm", :id, "--nicpromisc4", "allow-all"]
 
-    #nic5, sync:
+    #nic5, sync (not configured in firewall xml config, optional):
     vb.customize ["modifyvm", :id, "--nic5", "intnet"]
-    vb.customize ["modifyvm", :id, "--intnet5", "sync"]
+    vb.customize ["modifyvm", :id, "--intnet5", "opnsense-sync"]
     vb.customize ["modifyvm", :id, "--nictype5", "virtio"]
     vb.customize ["modifyvm", :id, "--nicpromisc5", "allow-all"]
 
