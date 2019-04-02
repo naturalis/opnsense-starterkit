@@ -509,6 +509,22 @@
         <port>22</port>
       </destination>
     </rule>
+    <rule>
+      <type>pass</type>
+      <interface>vagrant</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow webGUI</descr>
+      <log>1</log>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+        <port>443</port>
+      </destination>
+    </rule>
   </filter>
   <rrd>
     <enable/>
