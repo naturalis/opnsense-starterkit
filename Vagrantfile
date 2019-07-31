@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
 
   # firewall
   config.vm.define "firewall" do |config|
-    config.vm.box_version = "1.0"
+    config.vm.box_version = "1.1"
     config.vm.box = "rudibroekhuizen/opnsense"
     #config.vm.box = "build/packer_virtualbox-iso_virtualbox.box"
     config.vm.provider "virtualbox" do |vb|

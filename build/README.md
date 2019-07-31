@@ -9,7 +9,7 @@ You will build using [Packer](https://www.packer.io/docs/installation.html)
 
 
  - Install [Packer](https://www.packer.io/docs/installation.html)
- - You need to download the opnsense.iso (17.7) and unpack it into this repo as opnsense.iso
+ - You need to download the opnsense.iso and unpack it into this repo as opnsense.iso
  
  
 ### 17.7
@@ -57,6 +57,18 @@ mv OPNsense-19.1-OpenSSL-dvd-amd64.iso opnsense.iso
 shasum -a 256 opnsense.iso
 packer build -var 'iso_sha256_checksum=58bf2f0ae7948791589cd11727a5daa270bf00f655d8defe0a43140d920e8065' opnsense.json 
 ```
+
+### 19.7
+
+```
+cd build
+wget https://opnsense.c0urier.net/releases/19.7/OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-19.7-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=ce0525586c4ce680a0d67e2ea9d419137b4eef714e77d7d1d2ed1236dc880f54' opnsense.json 
+```
+
 
 ## Accessing 
 
