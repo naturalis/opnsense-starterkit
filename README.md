@@ -13,8 +13,8 @@ You want to either quickly
  
  ```
 mkdir /tmp/mytest && cd /tmp/mytest
-curl -o Vagrantfile https://raw.githubusercontent.com/EugenMayer/packer-opnsense/master/Vagrantfile
-vagrant up opnsense
+curl -o Vagrantfile https://raw.githubusercontent.com/naturalis/opnsense-starterkit/master/Vagrantfile
+vagrant up firewall
 ```
 
 Now you can either access OPNsense using `https://localhost:10443` or by `ssh -p 10022 root@localhost`
@@ -22,4 +22,4 @@ Now you can either access OPNsense using `https://localhost:10443` or by `ssh -p
 Username: root
 Password: opnsense
 
-To see which versions are available, check https://app.vagrantup.com/eugenmayer/boxes/opnsense.
+To see which versions are available, check https://app.vagrantup.com/rudibroekhuizen/boxes/opnsense
