@@ -9,7 +9,7 @@ You will build using [Packer](https://www.packer.io/docs/installation.html)
 
 
  - Install [Packer](https://www.packer.io/docs/installation.html)
- - You need to download the opnsense.iso (17.7) and unpack it into this repo as opnsense.iso
+ - You need to download the opnsense.iso and unpack it into this repo as opnsense.iso
  
  
 ### 17.7
