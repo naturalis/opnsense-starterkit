@@ -11,15 +11,47 @@ You will build using [Packer](https://www.packer.io/docs/installation.html)
  - Install [Packer](https://www.packer.io/docs/installation.html)
  - You need to download the opnsense.iso and unpack it into this repo as opnsense.iso
  
- 
-### 17.7
+### 20.1
+```
+cd build
+wget https://opnsense.c0urier.net/releases/20.1/OPNsense-20.1-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-20.1-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-20.1-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=ce0525586c4ce680a0d67e2ea9d419137b4eef714e77d7d1d2ed1236dc880f54' opnsense.json 
+```
+
+### 19.7
 
 ```
 cd build
-wget https://opnsense.c0urier.net/releases/17.7/OPNsense-17.7.5-OpenSSL-dvd-amd64.iso.bz2
-bunzip2 OPNsense-17.7.5-OpenSSL-dvd-amd64.iso.bz2
-mv OPNsense-17.7.5-OpenSSL-dvd-amd64.iso opnsense.iso
-packer build -var 'iso_sha256_checksum=29d16c6e03c2dbe1facc43d719150d91b84fa06baa834cfe8299212b52933c06' opnsense-18.1.json
+wget https://opnsense.c0urier.net/releases/19.7/OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-19.7-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=ce0525586c4ce680a0d67e2ea9d419137b4eef714e77d7d1d2ed1236dc880f54' opnsense.json 
+```
+
+### 19.1
+
+```
+cd build
+wget https://opnsense.c0urier.net/releases/19.1/OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-19.1-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=58bf2f0ae7948791589cd11727a5daa270bf00f655d8defe0a43140d920e8065' opnsense.json 
+```
+
+### 18.7
+
+```
+cd build
+wget https://opnsense.c0urier.net/releases/18.7/OPNsense-18.7-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-18.7-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-18.7-OpenSSL-dvd-amd64.iso opnsense.iso
+shasum -a 256 opnsense.iso
+packer build -var 'iso_sha256_checksum=63c80d66c4de4eaf7c4d98976855112ad097f63dac06ba59a55fa40496de384a' opnsense.json 
 ```
 
 ### 18.1
@@ -36,39 +68,15 @@ packer build -var 'iso_sha256_checksum=58ccaf06aa7d14b13d3462a6aa157c265962313c0
 
 This is yet needed since packer cannot (yet) download and unpack isos, it only can download non-archived isos
 
-### 18.7
+### 17.7
 
 ```
 cd build
-wget https://opnsense.c0urier.net/releases/18.7/OPNsense-18.7-OpenSSL-dvd-amd64.iso.bz2
-bunzip2 OPNsense-18.7-OpenSSL-dvd-amd64.iso.bz2
-mv OPNsense-18.7-OpenSSL-dvd-amd64.iso opnsense.iso
-shasum -a 256 opnsense.iso
-packer build -var 'iso_sha256_checksum=63c80d66c4de4eaf7c4d98976855112ad097f63dac06ba59a55fa40496de384a' opnsense.json 
+wget https://opnsense.c0urier.net/releases/17.7/OPNsense-17.7.5-OpenSSL-dvd-amd64.iso.bz2
+bunzip2 OPNsense-17.7.5-OpenSSL-dvd-amd64.iso.bz2
+mv OPNsense-17.7.5-OpenSSL-dvd-amd64.iso opnsense.iso
+packer build -var 'iso_sha256_checksum=29d16c6e03c2dbe1facc43d719150d91b84fa06baa834cfe8299212b52933c06' opnsense-18.1.json
 ```
-
-### 19.1
-
-```
-cd build
-wget https://opnsense.c0urier.net/releases/19.1/OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
-bunzip2 OPNsense-19.1-OpenSSL-dvd-amd64.iso.bz2
-mv OPNsense-19.1-OpenSSL-dvd-amd64.iso opnsense.iso
-shasum -a 256 opnsense.iso
-packer build -var 'iso_sha256_checksum=58bf2f0ae7948791589cd11727a5daa270bf00f655d8defe0a43140d920e8065' opnsense.json 
-```
-
-### 19.7
-
-```
-cd build
-wget https://opnsense.c0urier.net/releases/19.7/OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
-bunzip2 OPNsense-19.7-OpenSSL-dvd-amd64.iso.bz2
-mv OPNsense-19.7-OpenSSL-dvd-amd64.iso opnsense.iso
-shasum -a 256 opnsense.iso
-packer build -var 'iso_sha256_checksum=ce0525586c4ce680a0d67e2ea9d419137b4eef714e77d7d1d2ed1236dc880f54' opnsense.json 
-```
-
 
 ## Accessing 
 
