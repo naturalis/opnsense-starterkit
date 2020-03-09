@@ -18,7 +18,7 @@ wget https://opnsense.c0urier.net/releases/20.1/OPNsense-20.1-OpenSSL-dvd-amd64.
 bunzip2 OPNsense-20.1-OpenSSL-dvd-amd64.iso.bz2
 mv OPNsense-20.1-OpenSSL-dvd-amd64.iso opnsense.iso
 shasum -a 256 opnsense.iso
-packer build -var 'iso_sha256_checksum=ce0525586c4ce680a0d67e2ea9d419137b4eef714e77d7d1d2ed1236dc880f54' opnsense.json 
+packer build -var 'iso_sha256_checksum=4b15e9b3d72732d325c5eaf46ba34575d4de8cdc3e3ac1b10666c7372563be6d' opnsense.json 
 ```
 
 ### 19.7
